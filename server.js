@@ -15,4 +15,6 @@ app.use(async ctx => {
   ctx.body = html;
 });
 
-app.listen(8080);
+app.listen(8080, () => {
+  console.log('listen at http://localhost:8080');
+});

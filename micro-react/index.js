@@ -8,10 +8,10 @@ export async function bootstrap() {
 
 export async function mount(props) {
   console.log("ReactMicroApp mount", props);
-  ReactDOM.render(<App />, props.container)
+  ReactDOM.render(<App />, props.container.querySelector('#root'))
 }
 
 export async function unmount(props) {
   console.log("ReactMicroApp unmount", props);
-  ReactDOM.unmountComponentAtNode(props.container);
+  ReactDOM.unmountComponentAtNode(props.container.querySelector('#root'));
 }

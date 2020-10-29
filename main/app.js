@@ -2,7 +2,7 @@ import Vue from 'vue';
 
 const vm = new Vue({
   data: {
-    user: 'nossika',
+    greeter: 'micro-app',
   },
   methods: {
     to(url) {
@@ -10,10 +10,11 @@ const vm = new Vue({
     },
   },
   template: `<div>
-    {{user}}
+    {{greeter}}
     <div>
       <button @click="to('/')">main</button>
       <button @click="to('/react-micro-app')">react</button>
+      <button @click="to('/vue-micro-app')">vue</button>
     </div>
   </div>`,
 

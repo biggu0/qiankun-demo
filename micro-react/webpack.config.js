@@ -3,6 +3,7 @@ const path = require('path');
 module.exports = {
   mode: 'development',
   output: {
+    path: path.resolve(__dirname, 'dist'),
     library: "react-micro-app",
     libraryTarget: "umd",
   },
@@ -21,7 +22,19 @@ module.exports = {
             }
           },
         ],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+        ],
       }
+
     ]
   },
 }

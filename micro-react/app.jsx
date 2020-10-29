@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './index.css';
 
 export default function App() {
   const [count, setCount] = useState(0);
@@ -7,7 +8,7 @@ export default function App() {
       react app
       <div>
         counr: {count}
-        <button onClick={() => setCount(count + 1)}>count + 1</button>
+        <button onClick={() => setCount(count + 1)}>+1</button>
       </div>
     </div>
   )
