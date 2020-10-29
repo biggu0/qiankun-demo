@@ -4,7 +4,9 @@ import app from './app';
 registerMicroApps([
   {
     name: 'react-micro-app',
-    entry: '//localhost:8080/micro-react/dist/main.js',
+    entry: {
+      scripts: ['//localhost:8080/micro-react/dist/main.js'],
+    },
     container: '#micro-app',
     activeRule: '/react-micro-app',
   },

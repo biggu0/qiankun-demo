@@ -5,7 +5,6 @@ module.exports = {
   output: {
     library: "react-micro-app",
     libraryTarget: "umd",
-    jsonpFunction: `webpackJsonp_react-micro-app`,
   },
   entry: {
     main: path.resolve(__dirname, './index.js'),
