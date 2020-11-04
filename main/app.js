@@ -17,7 +17,6 @@ const vm = new Vue({
       <button @click="to('/vue-micro-app')">vue</button>
     </div>
   </div>`,
-
 });
 
 export default vm;

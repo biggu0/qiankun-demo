@@ -8,6 +8,17 @@ export async function bootstrap() {
 
 export async function mount(props) {
   console.log("ReactMicroApp mount", props);
+
+  console.log('initial store', props.getGlobalState());
+
+  props.onGlobalStateChange((state, prev) => {
+    console.log('received store change: ', state, prev);
+  });
+
+  props.setGlobalState({
+    name: 'from micro react',
+  });
+
   ReactDOM.render(<App />, props.container.querySelector('#root'))
 }
 

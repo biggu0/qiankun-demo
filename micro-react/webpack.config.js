@@ -3,6 +3,7 @@ const path = require('path');
 module.exports = {
   mode: 'development',
   output: {
+    publicPath: '/micro-react/dist/', // todo: move to runtime
     path: path.resolve(__dirname, 'dist'),
     library: "react-micro-app",
     libraryTarget: "umd",

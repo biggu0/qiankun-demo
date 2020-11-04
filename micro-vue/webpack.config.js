@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   mode: 'development',
   output: {
-    publicPath: '/micro-vue/dist',
+    publicPath: '/micro-vue/dist/',
     path: path.resolve(__dirname, 'dist'),
     library: "vue-micro-app",
     libraryTarget: "umd",

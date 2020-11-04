@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './index.css';
 
 export default function App() {
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    import('./async-module').then(res => {
+      console.log(res.default());
+    });
+  }, []);
+
   return (
     <div>
       react app

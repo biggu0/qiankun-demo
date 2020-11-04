@@ -4,7 +4,6 @@ const static = require('koa-static')
 const path = require('path');
 
 const app = new Koa();
-const html = fs.readFileSync('./index.html', {encoding: 'utf8'});
 
 app.use(static(
   path.join(__dirname,  './')
@@ -12,6 +11,8 @@ app.use(static(
 
 app.use(async ctx => {
   ctx.response.headers['content-type'] = 'text/html';
+
+  const html = fs.readFileSync('./index.html', {encoding: 'utf8'});
   ctx.body = html;
 });
 

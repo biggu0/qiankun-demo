@@ -34,7 +34,22 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var qiankun__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! qiankun */ \"../node_modules/qiankun/es/apis.js\");\n/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app */ \"./app.js\");\n\n\n(0,qiankun__WEBPACK_IMPORTED_MODULE_1__.registerMicroApps)([{\n  name: 'react-micro-app',\n  // import by js module\n  entry: {\n    html: '<div id=\"root\"></div>',\n    scripts: ['//localhost:8080/micro-react/dist/main.js']\n  },\n  container: '#micro-app',\n  activeRule: '/react-micro-app'\n}, {\n  name: 'vue-micro-app',\n  // import by app (html & js)\n  entry: '//localhost:8080/micro-vue/dist',\n  container: '#micro-app',\n  activeRule: '/vue-micro-app'\n}]);\n(0,qiankun__WEBPACK_IMPORTED_MODULE_1__.start)();\n_app__WEBPACK_IMPORTED_MODULE_0__.default.$mount('#main-app');\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var qiankun__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! qiankun */ \"../node_modules/qiankun/es/apis.js\");\n/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app */ \"./app.js\");\n/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./store */ \"./store.js\");\n\n\n\n(0,qiankun__WEBPACK_IMPORTED_MODULE_2__.registerMicroApps)([{\n  name: 'react-micro-app',\n  // import by js module\n  entry: {\n    html: '<div id=\"root\"></div>',\n    scripts: ['//localhost:8080/micro-react/dist/main.js']\n  },\n  container: '#micro-app',\n  activeRule: '/react-micro-app',\n  props: {\n    getGlobalState: _store__WEBPACK_IMPORTED_MODULE_1__.default.getGlobalState\n  }\n}, {\n  name: 'vue-micro-app',\n  // import by app (html & js)\n  entry: '//localhost:8080/micro-vue/dist/index.html',\n  container: '#micro-app',\n  activeRule: '/vue-micro-app',\n  props: {\n    getGlobalState: _store__WEBPACK_IMPORTED_MODULE_1__.default.getGlobalState\n  }\n}]);\n(0,qiankun__WEBPACK_IMPORTED_MODULE_2__.start)({// sandbox: {\n  //   strictStyleIsolation: true\n  // }\n});\n_app__WEBPACK_IMPORTED_MODULE_0__.default.$mount('#main-app');\n\n//# sourceURL=webpack:///./index.js?");
+
+/***/ }),
+
+/***/ "./store.js":
+/*!******************!*\
+  !*** ./store.js ***!
+  \******************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var qiankun__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! qiankun */ \"../node_modules/qiankun/es/globalState.js\");\n\nlet state = {\n  name: 'nossika',\n  timestamp: Date.now()\n};\nconst action = (0,qiankun__WEBPACK_IMPORTED_MODULE_0__.initGlobalState)(state);\naction.onGlobalStateChange((newState, prevState) => {\n  console.log('global store change: ', newState, prevState);\n  state = newState;\n});\n\nfunction getGlobalState() {\n  return JSON.parse(JSON.stringify(state));\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n  action,\n  getGlobalState\n});\n\n//# sourceURL=webpack:///./store.js?");
 
 /***/ }),
 
