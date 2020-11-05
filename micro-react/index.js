@@ -4,6 +4,7 @@ import React from 'react';
 
 export async function bootstrap() {
   console.log("ReactMicroApp bootstraped");
+  __webpack_public_path__ = '//localhost:8000/micro-react/dist/';
 }
 
 export async function mount(props) {
@@ -17,6 +18,7 @@ export async function mount(props) {
 
   props.setGlobalState({
     name: 'from micro react',
+    timestamp: Date.now(),
   });
 
   ReactDOM.render(<App />, props.container.querySelector('#root'))

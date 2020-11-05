@@ -43,10 +43,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /*! export mount [provided] [maybe used in main (runtime-defined)] [usage prevents renaming] */
 /*! export unmount [provided] [maybe used in main (runtime-defined)] [usage prevents renaming] */
 /*! other exports [not provided] [maybe used in main (runtime-defined)] */
-/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.p, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"bootstrap\": () => /* binding */ bootstrap,\n/* harmony export */   \"mount\": () => /* binding */ mount,\n/* harmony export */   \"unmount\": () => /* binding */ unmount\n/* harmony export */ });\n/* harmony import */ var _app_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.jsx */ \"./app.jsx\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"../node_modules/react-dom/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ \"../node_modules/react/index.js\");\nfunction asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }\n\nfunction _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err); } _next(undefined); }); }; }\n\n\n\n\nfunction bootstrap() {\n  return _bootstrap.apply(this, arguments);\n}\n\nfunction _bootstrap() {\n  _bootstrap = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {\n    return regeneratorRuntime.wrap(function _callee$(_context) {\n      while (1) {\n        switch (_context.prev = _context.next) {\n          case 0:\n            console.log(\"ReactMicroApp bootstraped\");\n\n          case 1:\n          case \"end\":\n            return _context.stop();\n        }\n      }\n    }, _callee);\n  }));\n  return _bootstrap.apply(this, arguments);\n}\n\nfunction mount(_x) {\n  return _mount.apply(this, arguments);\n}\n\nfunction _mount() {\n  _mount = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(props) {\n    return regeneratorRuntime.wrap(function _callee2$(_context2) {\n      while (1) {\n        switch (_context2.prev = _context2.next) {\n          case 0:\n            console.log(\"ReactMicroApp mount\", props);\n            console.log('initial store', props.getGlobalState());\n            props.onGlobalStateChange(function (state, prev) {\n              console.log('received store change: ', state, prev);\n            });\n            props.setGlobalState({\n              name: 'from micro react'\n            });\n            react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(_app_jsx__WEBPACK_IMPORTED_MODULE_0__.default, null), props.container.querySelector('#root'));\n\n          case 5:\n          case \"end\":\n            return _context2.stop();\n        }\n      }\n    }, _callee2);\n  }));\n  return _mount.apply(this, arguments);\n}\n\nfunction unmount(_x2) {\n  return _unmount.apply(this, arguments);\n}\n\nfunction _unmount() {\n  _unmount = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(props) {\n    return regeneratorRuntime.wrap(function _callee3$(_context3) {\n      while (1) {\n        switch (_context3.prev = _context3.next) {\n          case 0:\n            console.log(\"ReactMicroApp unmount\", props);\n            react_dom__WEBPACK_IMPORTED_MODULE_1__.unmountComponentAtNode(props.container.querySelector('#root'));\n\n          case 2:\n          case \"end\":\n            return _context3.stop();\n        }\n      }\n    }, _callee3);\n  }));\n  return _unmount.apply(this, arguments);\n}\n\n//# sourceURL=webpack://react-micro-app/./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"bootstrap\": () => /* binding */ bootstrap,\n/* harmony export */   \"mount\": () => /* binding */ mount,\n/* harmony export */   \"unmount\": () => /* binding */ unmount\n/* harmony export */ });\n/* harmony import */ var _app_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.jsx */ \"./app.jsx\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"../node_modules/react-dom/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ \"../node_modules/react/index.js\");\nfunction asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }\n\nfunction _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err); } _next(undefined); }); }; }\n\n\n\n\nfunction bootstrap() {\n  return _bootstrap.apply(this, arguments);\n}\n\nfunction _bootstrap() {\n  _bootstrap = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {\n    return regeneratorRuntime.wrap(function _callee$(_context) {\n      while (1) {\n        switch (_context.prev = _context.next) {\n          case 0:\n            console.log(\"ReactMicroApp bootstraped\");\n            __webpack_require__.p = '//localhost:8000/micro-react/dist/';\n\n          case 2:\n          case \"end\":\n            return _context.stop();\n        }\n      }\n    }, _callee);\n  }));\n  return _bootstrap.apply(this, arguments);\n}\n\nfunction mount(_x) {\n  return _mount.apply(this, arguments);\n}\n\nfunction _mount() {\n  _mount = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(props) {\n    return regeneratorRuntime.wrap(function _callee2$(_context2) {\n      while (1) {\n        switch (_context2.prev = _context2.next) {\n          case 0:\n            console.log(\"ReactMicroApp mount\", props);\n            console.log('initial store', props.getGlobalState());\n            props.onGlobalStateChange(function (state, prev) {\n              console.log('received store change: ', state, prev);\n            });\n            props.setGlobalState({\n              name: 'from micro react',\n              timestamp: Date.now()\n            });\n            react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(_app_jsx__WEBPACK_IMPORTED_MODULE_0__.default, null), props.container.querySelector('#root'));\n\n          case 5:\n          case \"end\":\n            return _context2.stop();\n        }\n      }\n    }, _callee2);\n  }));\n  return _mount.apply(this, arguments);\n}\n\nfunction unmount(_x2) {\n  return _unmount.apply(this, arguments);\n}\n\nfunction _unmount() {\n  _unmount = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(props) {\n    return regeneratorRuntime.wrap(function _callee3$(_context3) {\n      while (1) {\n        switch (_context3.prev = _context3.next) {\n          case 0:\n            console.log(\"ReactMicroApp unmount\", props);\n            react_dom__WEBPACK_IMPORTED_MODULE_1__.unmountComponentAtNode(props.container.querySelector('#root'));\n\n          case 2:\n          case \"end\":\n            return _context3.stop();\n        }\n      }\n    }, _callee3);\n  }));\n  return _unmount.apply(this, arguments);\n}\n\n//# sourceURL=webpack://react-micro-app/./index.js?");
 
 /***/ }),
 
@@ -442,6 +442,18 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
@@ -506,7 +518,22 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		__webpack_require__.p = "/micro-react/dist/";
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
