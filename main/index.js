@@ -1,37 +1,8 @@
-import { registerMicroApps, start } from 'qiankun';
-import app from './app';
-import store from './store';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from '@/app'
+import qiankunStarter from '@/qiankun-starter'
 
-registerMicroApps([
-  {
-    name: 'react-micro-app',
-    // import by js module
-    entry: {
-      html: '<div id="root"></div>',
-      scripts: ['//localhost:8000/micro-react/dist/main.js'],
-    },
-    container: '#micro-app',
-    activeRule: '/react-micro-app',
-    props: {
-      getGlobalState: store.getGlobalState,
-    },
-  },
-  {
-    name: 'vue-micro-app',
-    // import by app (html & js)
-    entry: '//localhost:8000/micro-vue/dist/index.html',
-    container: '#micro-app',
-    activeRule: '/vue-micro-app',
-    props: {
-      getGlobalState: store.getGlobalState,
-    },
-  },
-]);
+qiankunStarter()
 
-start({
-  // sandbox: {
-  //   strictStyleIsolation: true
-  // }
-});
-
-app.$mount('#main-app');
+ReactDOM.render(<App/>, document.querySelector('#main-app'))

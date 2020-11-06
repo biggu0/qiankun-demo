@@ -1,12 +1,12 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: `[name].js`,
-    publicPath: '/',
+    filename: '[name].js',
+    publicPath: '/'
   },
   entry: {
     main: path.resolve(__dirname, './index.js')
@@ -14,29 +14,33 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         use: [
           {
-            loader: 'babel-loader',
-          },
+            loader: 'babel-loader'
+          }
         ],
+        exclude: [
+          /node_modules\//
+        ]
       }
     ]
   },
   resolve: {
     alias: {
-      vue: path.resolve(__dirname, '../node_modules/vue/dist/vue.esm.js'),
+      '@': path.resolve(__dirname, './src')
     },
+    extensions: ['*', '.ts', '.js', '.tsx', '.jsx']
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: path.resolve(__dirname, './index.html'),
-      inject: 'body',
-    }),
+      template: path.resolve(__dirname, './src/index.html'),
+      inject: 'body'
+    })
   ],
   devServer: {
     port: 8080,
-    historyApiFallback: true,
-  },
+    historyApiFallback: true
+  }
 }
