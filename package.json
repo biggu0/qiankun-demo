@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "cd main && webpack serve",
+    "dev:main": "cd main && node script/dev",
     "build": "npm-run-all build:*",
     "build:main": "cd main && node script/build",
     "build:react": "cd micro-react && webpack",
@@ -32,6 +32,7 @@
     "eslint": "^7.12.1",
     "eslint-config-standard": "^16.0.1",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.21.5",

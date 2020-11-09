@@ -1,1 +1,1 @@
-export const genId = () => Date.now();
+export const genId = () => Date.now()

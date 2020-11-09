@@ -64,10 +64,6 @@ module.exports = () => {
       new MiniCssExtractPlugin({
         filename: '[name].css'
       })
-    ],
-    devServer: {
-      port: 8080,
-      historyApiFallback: true
-    }
+    ]
   }
 }

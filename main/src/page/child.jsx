@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './child.less'
-import { genId } from '@/util';
+import { genId } from '@/util'
 
 export default function Child () {
   return (

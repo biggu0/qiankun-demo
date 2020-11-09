@@ -13,7 +13,7 @@ open http://localhost:8000
 ## dev
 
 ```
-npm run dev
+npm run dev:main
 ```
 
 open http://localhost:8080

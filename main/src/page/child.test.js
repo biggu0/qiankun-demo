@@ -1,16 +1,16 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import { act } from 'react-dom/test-utils';
-import Child from './child.jsx';
+import React from 'react'
+import { shallow } from 'enzyme'
+import { act } from 'react-dom/test-utils'
+import Child from './child.jsx'
 
 describe('Child', () => {
   it('component should mount', async () => {
-    let wrapper;
+    let wrapper
 
     await act(async () => {
-      wrapper = shallow(<Child/>);
-    });
+      wrapper = shallow(<Child/>)
+    })
 
-    expect(wrapper.exists('span')).toEqual(true);
-  });
-});
+    expect(wrapper.exists('span')).toEqual(true)
+  })
+})
