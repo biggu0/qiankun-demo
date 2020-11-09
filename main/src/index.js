@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from '@/app'
-import qiankunStarter from '@/qiankun-starter'
+import App from './app'
+import qiankunStarter from './qiankun-starter'
 
 qiankunStarter()
 
