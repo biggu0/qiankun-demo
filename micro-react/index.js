@@ -21,10 +21,10 @@ export async function mount (props) {
     timestamp: Date.now()
   })
 
-  ReactDOM.render(<App />, props.container.querySelector('#root'))
+  ReactDOM.render(<App />, props.container.querySelector(`#${props.rootID}`))
 }
 
 export async function unmount (props) {
   console.log('ReactMicroApp unmount', props)
-  ReactDOM.unmountComponentAtNode(props.container.querySelector('#root'))
+  ReactDOM.unmountComponentAtNode(props.container.querySelector(`#${props.rootID}`))
 }

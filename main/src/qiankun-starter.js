@@ -1,32 +1,66 @@
 import store from './store'
 import { registerMicroApps, start } from 'qiankun'
+import { renderLoader } from '@/component/loader'
+import { microAppWrapperID, microAppModuleRootID, loaderID } from '@/util/constant'
 
-export default () => {
-  registerMicroApps([
+const loader = loading => {
+  renderLoader({
+    container: document.querySelector(`#${loaderID}`),
+    loading
+  })
+}
+
+const getMicroApps = async () => {
+  // mock
+  const microApps = [
     {
       name: 'react-micro-app',
-      // import by js module
-      entry: {
-        html: '<div id="root"></div>',
-        scripts: ['//localhost:8000/micro-react/dist/main.js']
-      },
-      container: '#micro-app',
-      activeRule: '/react-micro-app',
-      props: {
-        getGlobalState: store.getGlobalState
-      }
+      entry: '//localhost:8000/micro-react/dist/main.js',
+      entryType: 'js',
+      route: '/react-micro-app'
     },
     {
       name: 'vue-micro-app',
-      // import by app (html & js)
       entry: '//localhost:8000/micro-vue/dist/index.html',
-      container: '#micro-app',
-      activeRule: '/vue-micro-app',
+      entryType: 'html',
+      route: '/vue-micro-app'
+    }
+  ]
+
+  return microApps.map(microApp => {
+    let entry = null
+
+    switch (microApp.entryType) {
+      case 'html':
+        entry = microApp.entry
+        break
+      case 'js':
+        entry = {
+          html: `<div id="${microAppModuleRootID}"></div>`,
+          scripts: [microApp.entry]
+        }
+        break
+      default:
+        entry = microApp.entry
+    }
+
+    return {
+      name: microApp.name,
+      activeRule: microApp.route,
+      entry,
+      container: `#${microAppWrapperID}`,
+      loader,
       props: {
-        getGlobalState: store.getGlobalState
+        getGlobalState: store.getGlobalState,
+        rootID: microAppModuleRootID
       }
     }
-  ])
+  })
+}
+
+export default async () => {
+  const apps = await getMicroApps()
+  registerMicroApps(apps)
 
   start({
     // sandbox: {

@@ -21,6 +21,7 @@ export async function mount (props) {
 export async function unmount () {
   console.log('VueMicroApp unmount')
   vm && vm.$destroy()
+  vm.$el.innerHTML = ''
   vm = null
 }
 
