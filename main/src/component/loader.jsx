@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { microAppWrapperID } from '@/util/constant'
+import { microAppModuleRootID } from '@/util/constant'
 
 export default function Loader (props) {
   const { loading } = props
-  if (!loading) return <div id={microAppWrapperID}></div>
+  if (!loading) return <div id={microAppModuleRootID}></div>
 
   return (
     <div>
