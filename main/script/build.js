@@ -14,9 +14,7 @@ webpackConf.plugins.push(
   })
 )
 
-const compiler = webpack(webpackConf)
-
-compiler.run((err, stats) => {
+webpack(webpackConf).run((err, stats) => {
   if (err) {
     console.error('err: ', err.stack || err.details || err)
     return
