@@ -1,19 +1,20 @@
 import { initGlobalState } from 'qiankun'
 
-let state = {
+/* 和子工程共享的全局state */
+let globalState = {
   name: 'nossika',
   timestamp: Date.now()
 }
 
-const action = initGlobalState(state)
+const action = initGlobalState(globalState)
 
 action.onGlobalStateChange((newState, prevState) => {
   console.log('global store change: ', newState, prevState)
-  state = newState
+  globalState = newState
 })
 
 function getGlobalState () {
-  return JSON.parse(JSON.stringify(state))
+  return JSON.parse(JSON.stringify(globalState))
 }
 
 export default {

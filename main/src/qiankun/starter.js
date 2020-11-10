@@ -2,6 +2,7 @@ import store from './store'
 import { registerMicroApps, start } from 'qiankun'
 import { renderLoader } from '@/component/loader'
 import { microAppWrapperID, microAppModuleRootID, loaderID } from '@/util/constant'
+import { getMicroApps } from '@/api/micro-app'
 
 const loader = loading => {
   renderLoader({
@@ -10,22 +11,8 @@ const loader = loading => {
   })
 }
 
-const getMicroApps = async () => {
-  // mock
-  const microApps = [
-    {
-      name: 'react-micro-app',
-      entry: '//localhost:8000/micro-react/dist/main.js',
-      entryType: 'js',
-      route: '/react-micro-app'
-    },
-    {
-      name: 'vue-micro-app',
-      entry: '//localhost:8000/micro-vue/dist/index.html',
-      entryType: 'html',
-      route: '/vue-micro-app'
-    }
-  ]
+const getFormattedMicroApps = async () => {
+  const microApps = await getMicroApps()
 
   return microApps.map(microApp => {
     let entry = null
@@ -50,16 +37,20 @@ const getMicroApps = async () => {
       entry,
       container: `#${microAppWrapperID}`,
       loader,
+      // 提供子工程的参数
       props: {
+        // 除了原本的set和onchange，再加上get方法，用来初始化
         getGlobalState: store.getGlobalState,
+        // 用来渲染的根容器id，适用于js entry的情况
         rootID: microAppModuleRootID
       }
     }
   })
 }
 
-export default async () => {
-  const apps = await getMicroApps()
+export const startQiankun = async () => {
+  const apps = await getFormattedMicroApps()
+
   registerMicroApps(apps)
 
   start({
