@@ -40,7 +40,7 @@ const getFormattedMicroApps = async () => {
       // 提供子工程的参数
       props: {
         // 除了原本的set和onchange，再加上get方法，用来初始化
-        getGlobalState: store.getGlobalState,
+        getGlobalState: store.getState,
         // 用来渲染的根容器id，适用于js entry的情况
         rootID: microAppModuleRootID,
       },

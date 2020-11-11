@@ -30,7 +30,7 @@ npm run test
 - [x] 测试框架
 - [x] 接入example
 - [x] node服务，serve静态资源
-- [ ] 引入store，全局数据管理
+- [x] 引入store，全局数据管理
 - [ ] project&app管理（url解析、state分发）
 - [ ] 顶部导航开发
 - [ ] 对接后台接口

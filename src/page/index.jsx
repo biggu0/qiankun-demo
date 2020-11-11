@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { renderRoutes } from 'react-router-config';
+import { useUser } from '@/component/use/global';
+import { getUserInfo } from '@/api/user';
 
 export default function Index({ route }) {
   const [page, setPage] = useState(window.location.pathname);
+  const [user, setUser] = useUser();
+
+  useEffect(() => {
+    getUserInfo().then((res) => {
+      setUser(res.name);
+    });
+  }, []);
 
   const routeTo = (url) => {
     setPage(url);
@@ -19,6 +28,9 @@ export default function Index({ route }) {
       </div>
       <div>
         url: {page}
+      </div>
+      <div>
+        user: {user}
       </div>
       <div>
         {renderRoutes(route.routes)}
