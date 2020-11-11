@@ -2,11 +2,21 @@ import { useState, useEffect } from 'react';
 import qiankunStore from '@/qiankun/store';
 
 const getGlobalStateUse = field => () => {
-  const [val, setVal] = useState(qiankunStore.getState()[field]);
+  const [val, seOriginVal] = useState(qiankunStore.getState()[field]);
 
+  // store变化时，同步到val
   useEffect(() => qiankunStore.onStateChange((state) => {
-    setVal(state[field]);
+    seOriginVal(state[field]);
   }), []);
+
+  // 调用set时，同步到store
+  const setVal = (val) => {
+    qiankunStore.setState({
+      [field]: val,
+    });
+
+    seOriginVal(val);
+  };
 
   return [val, setVal];
 };
