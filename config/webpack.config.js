@@ -34,8 +34,20 @@ module.exports = () => ({
           /node_modules\//,
         ],
       },
+      // for antd
+      {
+        test: /\.(css)$/i,
+        include: /node_modules/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+          },
+        ],
+      },
       {
         test: /\.(css|less)$/i,
+        exclude: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,
           {

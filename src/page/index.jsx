@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { renderRoutes } from 'react-router-config';
 import { useUser, useProjectID, useAppID } from '@/component/use/global';
 import { getUserInfo } from '@/api/user';
+import MicroAppTester from './micro-app-tester';
+import history from '@/util/history';
 
 export default function Index({ route, match }) {
   const { projectID: mProjectID, appID: mAppID } = match.params;
 
-  const [page, setPage] = useState(window.location.pathname);
   const [user, setUser] = useUser();
   const [projectID, setProjectID] = useProjectID();
   const [appID, setAppID] = useAppID();
@@ -26,8 +27,7 @@ export default function Index({ route, match }) {
   }, [mAppID]);
 
   const routeTo = (url) => {
-    setPage(url);
-    window.history.pushState({}, '', url);
+    history.push(url);
   };
 
   return (
@@ -39,13 +39,10 @@ export default function Index({ route, match }) {
         <button onClick={() => routeTo('/vue-micro-app/cc/dd')}>vue-micro-app</button>
       </div>
       <div>
-        url: {page}
+        <MicroAppTester/>
       </div>
       <div>
-        user: {user}
-      </div>
-      <div>
-        projectID: {projectID} / appID: {appID}
+        [global state] user: {user} / projectID: {projectID} / appID: {appID}
       </div>
       <div>
         {renderRoutes(route.routes)}
