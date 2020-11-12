@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node script/serve",
-    "dev": "node script/dev",
-    "build": "node script/build",
+    "start": "node script/serve.js",
+    "dev": "node script/dev.js",
+    "build": "node script/build.js",
     "lint": "eslint \"**/*.{ts,tsx,js,jsx}\" --fix --max-warnings=0",
     "test": "jest --config config/jest.config.js"
   },
