@@ -8,8 +8,8 @@ const app = new Koa();
 
 let html;
 
-if (fs.existsSync('./dist/index.html')) {
-  html = fs.readFileSync('./dist/index.html', { encoding: 'utf8' });
+if (fs.existsSync(path.join(__dirname, '../dist/index.html'))) {
+  html = fs.readFileSync(path.join(__dirname, '../dist/index.html'), { encoding: 'utf8' });
 } else {
   html = '404';
 }
