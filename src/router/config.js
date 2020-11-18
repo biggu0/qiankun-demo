@@ -1,5 +1,6 @@
 import Child from '@/page/child';
 import Index from '@/page/index';
+import Tester from '@/page/micro-app-tester';
 
 export default [
   {
@@ -13,6 +14,10 @@ export default [
       {
         path: '/child',
         component: Child,
+      },
+      {
+        path: '/tester',
+        component: Tester,
       },
     ],
   },

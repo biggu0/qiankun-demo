@@ -1,8 +1,7 @@
 import store from './store';
-import { registerMicroApps, start } from 'qiankun';
+import { start } from 'qiankun';
 import { renderLoader } from '@/component/loader';
 import { microAppWrapperID, microAppModuleRootID, loaderID } from '@/util/constant';
-import { getMicroApps } from '@/api/micro-app';
 
 const loader = (loading) => {
   renderLoader({
@@ -45,28 +44,7 @@ export const getFormattedMicroApps = microApps => microApps.map((microApp) => {
 });
 
 export const startQiankun = async () => {
-  const microApps = getFormattedMicroApps(await getMicroApps());
-
-  registerMicroApps(
-    microApps,
-    {
-      beforeLoad: [
-        (app) => {
-          console.log('[LifeCycle] before load %c%s', 'color: green;', app.name);
-        },
-      ],
-      beforeMount: [
-        (app) => {
-          console.log('[LifeCycle] before mount %c%s', 'color: green;', app.name);
-        },
-      ],
-      afterUnmount: [
-        (app) => {
-          console.log('[LifeCycle] after unmount %c%s', 'color: green;', app.name);
-        },
-      ],
-    },
-  );
+  // 跳过register，需要加载微应用时手动调用load方法
 
   start({
     // sandbox: {
