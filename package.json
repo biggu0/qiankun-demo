@@ -7,7 +7,7 @@
     "start": "node script/serve.js",
     "dev": "node script/dev.js",
     "build": "node script/build.js",
-    "lint": "eslint \"**/*.{ts,tsx,js,jsx}\" --max-warnings=0 --config=config/.eslintrc.js",
+    "lint": "eslint \"**/*.{ts,tsx,js,jsx}\" --max-warnings=0 --config=config/.eslintrc.js --fix",
     "test": "jest --config config/jest.config.js"
   },
   "repository": {

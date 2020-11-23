@@ -38,6 +38,7 @@ export default function Index({ route, match }) {
         <button onClick={() => routeTo('/tester')}>tester</button>
         <button onClick={() => routeTo('/react-micro-app/aa/bb')}>react-micro-app</button>
         <button onClick={() => routeTo('/vue-micro-app/cc/dd')}>vue-micro-app</button>
+        <button onClick={() => routeTo('/module-federation/cc/dd')}>module-federation</button>
         <button onClick={() => routeTo('/wrong-app/cc/dd')}>wrong-app</button>
       </div>
       <div>

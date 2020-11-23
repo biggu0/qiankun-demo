@@ -13,6 +13,12 @@ export const getMicroApps = () => mockResponse([
     entryType: 'html',
     route: '/vue-micro-app',
   },
+  {
+    name: 'module-federation',
+    entry: '//localhost:8000/module-federation/dist/main.js',
+    entryType: 'js',
+    route: '/module-federation',
+  },
 ]);
 
 export const test = params => request({

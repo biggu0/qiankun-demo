@@ -7,4 +7,7 @@ import './global.less';
 
 ReactDOM.render(<App/>, document.querySelector(`#${mainAppID}`));
 
+window.React = React;
+window.ReactDOM = ReactDOM;
+
 startQiankun();

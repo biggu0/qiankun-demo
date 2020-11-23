@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { ModuleFederationPlugin } = require('webpack').container;
 
 module.exports = () => ({
   mode: 'development',
@@ -68,6 +69,14 @@ module.exports = () => ({
     extensions: ['*', '.ts', '.js', '.tsx', '.jsx'],
   },
   plugins: [
+    new ModuleFederationPlugin({
+      name: 'mainApp',
+      library: { type: 'var', name: 'mainApp' },
+      filename: 'mainAppFederation.js',
+      exposes: {
+        './Button': path.resolve(__dirname, '../src/component/button/index.jsx'),
+      },
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, '../src/index.html'),
