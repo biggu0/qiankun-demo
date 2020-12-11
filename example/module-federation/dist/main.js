@@ -30,7 +30,7 @@ return /******/ (() => { // webpackBootstrap
 /*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.e, __webpack_require__.t, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => /* binding */ App\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"../../node_modules/react/index.js\");\n;\nconsole.log(react__WEBPACK_IMPORTED_MODULE_0__, 111);\nvar RemoteComp = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {\n  return __webpack_require__.e(/*! import() */ \"webpack_container_remote_epp-component_tester\").then(__webpack_require__.t.bind(__webpack_require__, /*! epp-component/tester */ \"webpack/container/remote/epp-component/tester\", 7));\n});\nfunction App() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Suspense, {\n    fallback: \"loading\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(RemoteComp, null)));\n}\n\n//# sourceURL=webpack://module-federation/./app.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => /* binding */ App\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"../../node_modules/react/index.js\");\n;\nvar RemoteComp = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {\n  return __webpack_require__.e(/*! import() */ \"webpack_container_remote_epp-component_tester\").then(__webpack_require__.t.bind(__webpack_require__, /*! epp-component/tester */ \"webpack/container/remote/epp-component/tester\", 7));\n});\nfunction App() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Suspense, {\n    fallback: \"loading\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(RemoteComp, null)));\n}\n\n//# sourceURL=webpack://module-federation/./app.jsx?");
 
 /***/ }),
 
@@ -314,15 +314,15 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 /***/ }),
 
 /***/ "webpack/container/reference/epp-component":
-/*!*******************************************************************************************************************!*\
-  !*** external "eppComponent@https://epp-test-1258344701.cos.ap-guangzhou.myqcloud.com/epp-component/mf/index.js" ***!
-  \*******************************************************************************************************************/
+/*!*****************************************************************************************!*\
+  !*** external "eppComponent@http://localhost:8000/module-federation-remote/dist/mf.js" ***!
+  \*****************************************************************************************/
 /*! dynamic exports */
 /*! exports [maybe provided (runtime-defined)] [no usage info] */
 /*! runtime requirements: module, __webpack_require__.l, __webpack_require__.* */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("var error = new Error();\nmodule.exports = new Promise((resolve, reject) => {\n\tif(typeof eppComponent !== \"undefined\") return resolve();\n\t__webpack_require__.l(\"https://epp-test-1258344701.cos.ap-guangzhou.myqcloud.com/epp-component/mf/index.js\", (event) => {\n\t\tif(typeof eppComponent !== \"undefined\") return resolve();\n\t\tvar errorType = event && (event.type === 'load' ? 'missing' : event.type);\n\t\tvar realSrc = event && event.target && event.target.src;\n\t\terror.message = 'Loading script failed.\\n(' + errorType + ': ' + realSrc + ')';\n\t\terror.name = 'ScriptExternalLoadError';\n\t\terror.type = errorType;\n\t\terror.request = realSrc;\n\t\treject(error);\n\t}, \"eppComponent\");\n}).then(() => eppComponent);\n\n//# sourceURL=webpack://module-federation/external_%22eppComponent@https://epp-test-1258344701.cos.ap-guangzhou.myqcloud.com/epp-component/mf/index.js%22?");
+eval("var error = new Error();\nmodule.exports = new Promise((resolve, reject) => {\n\tif(typeof eppComponent !== \"undefined\") return resolve();\n\t__webpack_require__.l(\"http://localhost:8000/module-federation-remote/dist/mf.js\", (event) => {\n\t\tif(typeof eppComponent !== \"undefined\") return resolve();\n\t\tvar errorType = event && (event.type === 'load' ? 'missing' : event.type);\n\t\tvar realSrc = event && event.target && event.target.src;\n\t\terror.message = 'Loading script failed.\\n(' + errorType + ': ' + realSrc + ')';\n\t\terror.name = 'ScriptExternalLoadError';\n\t\terror.type = errorType;\n\t\terror.request = realSrc;\n\t\treject(error);\n\t}, \"eppComponent\");\n}).then(() => eppComponent);\n\n//# sourceURL=webpack://module-federation/external_%22eppComponent@http://localhost:8000/module-federation-remote/dist/mf.js%22?");
 
 /***/ })
 

@@ -1,5 +1,5 @@
 import React from 'react'
-console.log(React, 111)
+
 const RemoteComp = React.lazy(() => import('epp-component/tester'))
 
 export default function App () {

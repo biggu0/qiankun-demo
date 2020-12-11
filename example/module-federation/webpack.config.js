@@ -47,7 +47,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'ModuleFederationDemo',
       remotes: {
-        'epp-component': 'eppComponent@https://epp-test-1258344701.cos.ap-guangzhou.myqcloud.com/epp-component/mf/index.js'
+        'epp-component': 'eppComponent@http://localhost:8000/module-federation-remote/dist/mf.js'
       }
     }),
     new HtmlWebpackPlugin({
