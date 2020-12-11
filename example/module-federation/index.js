@@ -1,14 +1,25 @@
-import App from './app.jsx';
-import ReactDOM from 'react-dom';
-import React from 'react';
+import ReactDOM from 'react-dom'
+import React from 'react'
+import App from './app.jsx'
 
-export async function bootstrap() {
+window.React = React
+window.ReactDOM = ReactDOM
+
+const render = (container) => {
+  ReactDOM.render(<App />, container.querySelector('#mf-app'))
 }
 
-export async function mount(props) {
-  ReactDOM.render(<App />, props.container.querySelector(`#${props.rootID}`));
+export async function bootstrap () {
 }
 
-export async function unmount(props) {
-  ReactDOM.unmountComponentAtNode(props.container.querySelector(`#${props.rootID}`));
+export async function mount (props) {
+  render(props.container)
+}
+
+export async function unmount (props) {
+  ReactDOM.unmountComponentAtNode(props.container.querySelector('#mf-app'))
+}
+
+if (!window.__POWERED_BY_QIANKUN__) { // eslint-disable-line
+  render(document.body)
 }

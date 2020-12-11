@@ -1,11 +1,11 @@
-import Child from '@/page/child';
-import Index from '@/page/index';
-import Tester from '@/page/micro-app-tester';
+import Child from '@/page/child'
+import Index from '@/page/index'
+import Tester from '@/page/micro-app-tester'
 
 export default [
   {
     path: '/:microApp/:projectID/:appID',
-    component: Index,
+    component: Index
   },
   {
     path: '/',
@@ -13,12 +13,12 @@ export default [
     routes: [
       {
         path: '/child',
-        component: Child,
+        component: Child
       },
       {
         path: '/tester',
-        component: Tester,
-      },
-    ],
-  },
-];
+        component: Tester
+      }
+    ]
+  }
+]

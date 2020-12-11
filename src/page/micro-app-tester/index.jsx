@@ -1,41 +1,43 @@
-import React, { useState } from 'react';
-import { Input, Button, Radio, Form } from 'antd';
-import { registerMicroApps } from 'qiankun';
-import { getFormattedMicroApps } from '@/qiankun/starter';
-import history from '@/util/history';
+import React, { useState } from 'react'
+import {
+  Input, Button, Radio, Form
+} from 'antd'
+import { registerMicroApps } from 'qiankun'
+import { getFormattedMicroApps } from '@/qiankun/starter'
+import history from '@/util/history'
 
-export default function MicroAppTester() {
-  const [route, setRoute] = useState('');
-  const [entry, setEntry] = useState('');
-  const [entryType, setEntryType] = useState('js');
+export default function MicroAppTester () {
+  const [route, setRoute] = useState('')
+  const [entry, setEntry] = useState('')
+  const [entryType, setEntryType] = useState('js')
 
   const submit = () => {
     const apps = getFormattedMicroApps([{
       name: route,
       route,
       entry,
-      entryType,
-    }]);
+      entryType
+    }])
 
-    registerMicroApps(apps);
+    registerMicroApps(apps)
 
-    history.push(`/${route}/1/2`);
-  };
+    history.push(`/${route}/1/2`)
+  }
 
   return (
     <div>
       micro app tester
       <Form>
         <Form.Item label="route">
-          <Input value={route} onChange={e => setRoute(e.target.value)} placeholder="app name"/>
+          <Input value={route} onChange={(e) => setRoute(e.target.value)} placeholder="app name" />
         </Form.Item>
         <Form.Item label="entry">
-          <Input value={entry} onChange={e => setEntry(e.target.value)} placeholder="http://xx/xx.(js/html)"/>
+          <Input value={entry} onChange={(e) => setEntry(e.target.value)} placeholder="http://xx/xx.(js/html)" />
         </Form.Item>
         <Form.Item label="entryType">
-          <Radio.Group onChange={e => setEntryType(e.target.value)} value={entryType}>
-            <Radio value={'js'}>js</Radio>
-            <Radio value={'html'}>html</Radio>
+          <Radio.Group onChange={(e) => setEntryType(e.target.value)} value={entryType}>
+            <Radio value="js">js</Radio>
+            <Radio value="html">html</Radio>
           </Radio.Group>
         </Form.Item>
         <Form.Item>
@@ -43,5 +45,5 @@ export default function MicroAppTester() {
         </Form.Item>
       </Form>
     </div>
-  );
+  )
 }

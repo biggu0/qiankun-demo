@@ -1,34 +1,34 @@
-import React, { useEffect } from 'react';
-import { renderRoutes } from 'react-router-config';
-import { useUser, useProjectID, useAppID } from '@/component/use/global';
-import { getUserInfo } from '@/api/user';
-import history from '@/util/history';
-import AppLoader from '@/component/app-loader';
+import React, { useEffect } from 'react'
+import { renderRoutes } from 'react-router-config'
+import { useUser, useProjectID, useAppID } from '@/component/use/global'
+import { getUserInfo } from '@/api/user'
+import history from '@/util/history'
+import AppLoader from '@/component/app-loader'
 
-export default function Index({ route, match }) {
-  const { projectID: mProjectID, appID: mAppID, microApp } = match.params;
+export default function Index ({ route, match }) {
+  const { projectID: mProjectID, appID: mAppID, microApp } = match.params
 
-  const [user, setUser] = useUser();
-  const [projectID, setProjectID] = useProjectID();
-  const [appID, setAppID] = useAppID();
+  const [user, setUser] = useUser()
+  const [projectID, setProjectID] = useProjectID()
+  const [appID, setAppID] = useAppID()
 
   useEffect(() => {
     getUserInfo().then((res) => {
-      setUser(res.name);
-    });
-  }, []);
+      setUser(res.name)
+    })
+  }, [])
 
   useEffect(() => {
-    setProjectID(mProjectID);
-  }, [mProjectID]);
+    setProjectID(mProjectID)
+  }, [mProjectID])
 
   useEffect(() => {
-    setAppID(mAppID);
-  }, [mAppID]);
+    setAppID(mAppID)
+  }, [mAppID])
 
   const routeTo = (url) => {
-    history.push(url);
-  };
+    history.push(url)
+  }
 
   return (
     <div>
@@ -42,12 +42,22 @@ export default function Index({ route, match }) {
         <button onClick={() => routeTo('/wrong-app/cc/dd')}>wrong-app</button>
       </div>
       <div>
-        [global state] user: {user} / projectID: {projectID} / appID: {appID}
+        [global state] user:
+        {' '}
+        {user}
+        {' '}
+        / projectID:
+        {' '}
+        {projectID}
+        {' '}
+        / appID:
+        {' '}
+        {appID}
       </div>
-      <AppLoader appID={microApp}/>
+      <AppLoader appID={microApp} />
       <div>
         {renderRoutes(route.routes)}
       </div>
     </div>
-  );
+  )
 }

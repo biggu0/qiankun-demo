@@ -1,32 +1,32 @@
 class Emitter {
-  constructor() {
-    this.chanMap = {};
+  constructor () {
+    this.chanMap = {}
   }
 
-  on(chan, handler) {
+  on (chan, handler) {
     if (!this.chanMap[chan]) {
-      this.chanMap[chan] = new Set();
+      this.chanMap[chan] = new Set()
     }
 
-    this.chanMap[chan].add(handler);
+    this.chanMap[chan].add(handler)
   }
 
-  off(chan, handler) {
-    if (!this.chanMap[chan]) return;
+  off (chan, handler) {
+    if (!this.chanMap[chan]) return
 
-    this.chanMap[chan].delete(handler);
+    this.chanMap[chan].delete(handler)
   }
 
-  emit(chan, msg) {
-    if (!this.chanMap[chan]) return;
+  emit (chan, msg) {
+    if (!this.chanMap[chan]) return
     for (const fn of this.chanMap[chan].values()) { // eslint-disable-line no-restricted-syntax
       try {
-        fn(msg);
+        fn(msg)
       } catch (err) {
-        console.error(`emitter [${chan}] ${fn} error: `, err);
+        console.error(`emitter [${chan}] ${fn} error: `, err)
       }
     }
   }
 }
 
-export default new Emitter();
+export default new Emitter()

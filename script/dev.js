@@ -1,11 +1,11 @@
-const webpack = require('webpack');
-const WebpackDevServer = require('webpack-dev-server');
-const webpackConf = require('../config/webpack.config')();
+const webpack = require('webpack')
+const WebpackDevServer = require('webpack-dev-server')
+const webpackConf = require('../config/webpack.config')()
 
-const PORT = 8080;
+const PORT = 8080
 
-webpackConf.mode = 'development';
-webpackConf.devtool = 'eval-source-map';
+webpackConf.mode = 'development'
+webpackConf.devtool = 'eval-source-map'
 
 const server = new WebpackDevServer(webpack(webpackConf), {
   hot: true,
@@ -13,11 +13,11 @@ const server = new WebpackDevServer(webpack(webpackConf), {
   index: 'index.html',
   port: PORT,
   headers: {
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': '*'
   },
-  historyApiFallback: true,
-});
+  historyApiFallback: true
+})
 
 server.listen(PORT, 'localhost', () => {
-  console.log(`start dev at http://localhost:${PORT}/`);
-});
+  console.log(`start dev at http://localhost:${PORT}/`)
+})

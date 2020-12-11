@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
+console.log(React, 111)
+const RemoteComp = React.lazy(() => import('epp-component/tester'))
 
-const RemoteButton = React.lazy(() => import('mainApp/Button'));
-
-export default function App() {
+export default function App () {
   return (
     <div>
-      <React.Suspense fallback="Loading Button">
-        <RemoteButton/>
+      <React.Suspense fallback="loading">
+        <RemoteComp/>
       </React.Suspense>
     </div>
-  );
+  )
 }

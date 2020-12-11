@@ -2,16 +2,16 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'plugin:jest/recommended',
-    '@tencent/eslint-config-tencent',
+    'standard'
   ],
   rules: {
     'react/prop-types': 0,
-    indent: ['error', 2, { SwitchCase: 1 }],
+    indent: ['error', 2, { SwitchCase: 1 }]
   },
   settings: {
     react: {
-      version: 'detect',
-    },
+      version: 'detect'
+    }
   },
-  ignorePatterns: ['**/node_modules/', '**/dist/'],
-};
+  ignorePatterns: ['**/node_modules/', '**/dist/']
+}

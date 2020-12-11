@@ -1,33 +1,33 @@
-const Koa = require('koa');
-const fs = require('fs');
-const koaStatic = require('koa-static');
-const path = require('path');
-const cors = require('@koa/cors');
+const Koa = require('koa')
+const fs = require('fs')
+const koaStatic = require('koa-static')
+const path = require('path')
+const cors = require('@koa/cors')
 
-const app = new Koa();
+const app = new Koa()
 
-let html;
+let html
 
 if (fs.existsSync(path.join(__dirname, '../dist/index.html'))) {
-  html = fs.readFileSync(path.join(__dirname, '../dist/index.html'), { encoding: 'utf8' });
+  html = fs.readFileSync(path.join(__dirname, '../dist/index.html'), { encoding: 'utf8' })
 } else {
-  html = '404';
+  html = '404'
 }
 
-app.use(cors());
+app.use(cors())
 
-app.use(koaStatic(path.join(__dirname, '../dist')));
+app.use(koaStatic(path.join(__dirname, '../dist')))
 
-app.use(koaStatic(path.join(__dirname, '../example')));
+app.use(koaStatic(path.join(__dirname, '../example')))
 
 app.use(async (ctx) => {
-  ctx.response.headers['content-type'] = 'text/html';
+  ctx.response.headers['content-type'] = 'text/html'
 
-  ctx.body = html;
-});
+  ctx.body = html
+})
 
-const port = process.env.PORT || process.env.main_port || 8000;
+const port = process.env.PORT || process.env.main_port || 8000
 
 app.listen(port, () => {
-  console.log(`run at http://localhost:${port}`);
-});
+  console.log(`run at http://localhost:${port}`)
+})

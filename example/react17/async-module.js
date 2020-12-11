@@ -1,1 +1,1 @@
-export default () => 'message from async module!';
+export default () => 'message from async module!'
